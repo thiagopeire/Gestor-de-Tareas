@@ -1,0 +1,23 @@
+Semana 1-2 → Consolidar Backend (FastAPI + bases de datos)
+Objetivo: aprender a crear una API completa con autenticación + base de datos.
+
+Temas:
+
+FastAPI (routers, dependencias, validación con Pydantic)
+
+SQL con SQLite o PostgreSQL
+
+ORM: SQLAlchemy o Tortoise ORM
+
+Autenticación básica con JWT
+
+Proyecto propuesto:
+👉 "Gestor de tareas con API"
+
+CRUD de tareas (crear, listar, modificar, eliminar)
+
+Usuarios con login y token
+
+Base de datos persistente
+
+Meta: tener la API funcionando en local y documentada con Swagger.

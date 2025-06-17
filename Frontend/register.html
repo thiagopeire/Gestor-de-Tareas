@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Crea una cuenta - Taskify</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#101323] dark group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2e2447] px-10 py-3">
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Taskify</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-white text-sm font-medium leading-normal hover:underline" href="https://github.com/cianuro123">About me (GitHub)</a>
+            </div>
+            <a href="login.html">
+            <button
+              type="submit"
+              id="login-button"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer hover:underline items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#2e2447] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Iniciar Sesión</span>
+            </button></a>
+          </div>
+        </header>
+        <!-- FORMULARIO DE REGISTRO CONECTADO A LA API -->
+        <form id="registro-form" class="px-4 py-3 space-y-4">
+            <div class="px-40 flex flex-1 justify-center py-5">
+              <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+                <h2 class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Crear Cuenta</h2>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Nombres</p>
+                    <input
+                        id="first-name"
+                      placeholder="Nombres"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                  </label>
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Apellidos</p>
+                    <input
+                        id="last-name"
+                      placeholder="Apellidos"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                  </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Fecha de Nacimiento</p>
+                    <input
+                        id="birthdate"
+                      placeholder="DD/MM/YYYY"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                  </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Nombre de Usuario</p>
+                    <input
+                        id="username"
+                      placeholder="Elige un nombre de usuario"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                </label>
+            </div>
+            <p class="text-[#a293c8] text-sm font-normal leading-normal pb-3 pt-1 px-4">
+            Tu nombre de usuario debe tener entre 3 y 20 caracteres, y puede contener letras, números y guiones bajos.
+            </p>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
+                    <input
+                        id="email"
+                      placeholder="Correo electrónico"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                  </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Contraseña</p>
+                    <input
+                    type="password"
+                      id="password"
+                      placeholder="Crea una contraseña"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#2e2447] focus:border-none h-14 placeholder:text-[#a293c8] p-4 text-base font-normal leading-normal"
+                      value=""
+                      required
+                    />
+                  </label>
+                </div>
+                <p class="text-[#a293c8] text-sm font-normal leading-normal pb-3 pt-1 px-4">
+                  La contraseña debe tener entre 8 y 20 caracteres, al menos un numero, una letra y un caracter especial (@#$%&?¿)
+                </p>
+                <p class="text-[#a293c8] text-sm font-normal leading-normal pb-3 pt-1 px-4">Al crear una cuenta, aceptas nuestros Términos de Servicio y Política de Privacidad.</p>
+                <div class="flex px-4 py-3">
+                  <button type="submit"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-[#602ae8] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                    <span class="truncate">Crear cuenta</span>
+                  </button>
+                </div>
+                <p id="success-msg" class="text-green-500 text-sm font-normal leading-normal pb-3 pt-1 px-4 text-start underline hidden" ></p>
+                <p id="error-msg" class="justify-end text-red-500 text-sm font-normal leading-normal pb-3 pt-1 px-4 text-start underline hidden" ></p>
+                <p class="text-[#a293c8] text-sm font-normal cursor-pointer leading-normal pb-3 pt-1 px-4 text-start underline items-end">¿Ya tienes una cuenta? Iniciar Sesión</p>
+              </div>
+            </div>
+          </div>
+        </div>
+</form>
+
+<script src="JS/register.js"></script>
+  </body>
+</html>
