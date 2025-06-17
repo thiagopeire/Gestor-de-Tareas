@@ -31,7 +31,7 @@ async function fetchTask() {
 
     } catch(error) {
 
-          console.log(error.details) // Redirigir a la página principal si hay un error
+          console.log(error) // Redirigir a la página principal si hay un error
         }
 }
 const errorMsg = document.getElementById("error-msg");
