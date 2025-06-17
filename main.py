@@ -5,7 +5,7 @@ from Backend.routers import tareas, users
 
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory="frontend", html=True), name="static")
+app.mount("/", StaticFiles(directory="Frontend", html=True), name="static")
 # CORS setup
 app.add_middleware(
     CORSMiddleware,
