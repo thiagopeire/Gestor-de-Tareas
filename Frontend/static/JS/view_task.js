@@ -1,7 +1,6 @@
 async function fetchTask() {
   try {
-      const params = new URLSearchParams(window.location.search);
-      const taskId = params.get("id");
+      const taskId = window.location.pathname;
       if (!taskId) {
         console.error("No se encontró ID en la URL");
       }
