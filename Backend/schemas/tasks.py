@@ -1,4 +1,4 @@
-from models.tasks import Task
+from Backend.models.tasks import Task
 
 def task_schema(task:dict) -> dict:
     return {

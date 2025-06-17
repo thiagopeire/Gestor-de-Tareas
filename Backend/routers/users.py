@@ -1,9 +1,9 @@
-from models.users import User
+from Backend.models.users import User
 from fastapi import APIRouter, Depends, HTTPException,status
 from fastapi.security import OAuth2PasswordRequestForm
-from db.client import db 
-from auth.auth_users import Autorizar,SearchUser,hash_password,verify_password,encode
-from schemas.users import user_schema, users_schema
+from Backend.db.client import db 
+from Backend.auth.auth_users import Autorizar,SearchUser,hash_password,verify_password,encode
+from Backend.schemas.users import user_schema, users_schema
 from datetime import datetime, timedelta
 from urllib.parse import unquote
 

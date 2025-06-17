@@ -1,13 +1,12 @@
-from models.tasks import Task
-from auth.auth_users import current_user, decode  
+from Backend.models.tasks import Task
+from Backend.auth.auth_users import current_user, decode  
 from fastapi import APIRouter, HTTPException,status, Depends
-from db.client import db 
-from models.users import User
-from schemas.tasks import task_schema, tasks_schema
+from Backend.db.client import db 
+from Backend.models.users import User
+from Backend.schemas.tasks import task_schema, tasks_schema
 from bson import ObjectId
 from datetime import datetime, timedelta
-
-from schemas.users import user_schema
+from Backend.schemas.users import user_schema
 
 router = APIRouter(prefix="/tasks", tags=["Tareas"])
 

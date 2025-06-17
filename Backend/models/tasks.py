@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from models.users import User
 
 class Task(BaseModel):
     id:str | None=None

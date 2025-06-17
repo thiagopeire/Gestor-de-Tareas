@@ -1,6 +1,6 @@
-from models.users import User
-from schemas.users import user_schema, users_schema
-from db.client import db
+from Backend.models.users import User
+from Backend.schemas.users import user_schema, users_schema
+from Backend.db.client import db
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from fastapi import HTTPException, status, Depends
 import os,jwt, re
