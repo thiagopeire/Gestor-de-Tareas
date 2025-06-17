@@ -1,7 +1,7 @@
-function parseJwt(tokenn) {
-  if (!tokenn) return null;
+function parseJwt(tok_en) {
+  if (!tok_en) return null;
   try {
-    const base64Url = tokenn.split('.')[1];
+    const base64Url = tok_en.split('.')[1];
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
       '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
@@ -12,8 +12,8 @@ function parseJwt(tokenn) {
   }
 }
 
-function isTokenExpired(tokken) {
-  const payload = parseJwt(tokken);
+function isTokenExpired(identifier) {
+  const payload = parseJwt(identifier);
   if (!payload || !payload.exp) return true;
   const now = Math.floor(Date.now() / 1000);
   return payload.exp < now;
