@@ -21,4 +21,4 @@ app.include_router(users.router)
 
 @app.get("/", status_code=200)
 async def get():
-    return FileResponse(os.path.join("Frontend", "index.html"))
+    return FileResponse(os.path.join("Frontend","templates", "index.html"))
