@@ -33,7 +33,8 @@ async function fetchTask() {
           window.location.href = "tasks_main.html"; // Redirigir a la página principal si hay un error
         }
 }
-
+const errorMsg = document.getElementById("error-msg");
+errorMsg.classList.add("hidden"); // ocultar mensaje anterior
 fetchTask();
 
 document.getElementById('task-updated').addEventListener('submit', async function(event) {

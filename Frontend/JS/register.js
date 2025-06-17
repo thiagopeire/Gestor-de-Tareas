@@ -11,7 +11,8 @@ document.getElementById("registro-form").addEventListener("submit", async functi
         password: document.getElementById("password").value,
         disabled: false
         };
-
+        const errorMsg = document.getElementById("error-msg");
+        errorMsg.classList.add("hidden"); // ocultar mensaje anterior
     try {
         const response = await fetch("https://gestor-de-tareas-r39h.onrender.com/users/register", {
             method: "POST",

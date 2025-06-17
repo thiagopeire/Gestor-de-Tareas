@@ -8,6 +8,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
         const formData = new URLSearchParams();
         formData.append("username", username);
         formData.append("password", password);
+
         try {
           const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/users/login`, {
             method: "POST",
