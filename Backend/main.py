@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from routers import tareas, users
 
 
 app = FastAPI()
+app.mount("/", StaticFiles(directory="frontend", html=True), name="static")
 # CORS setup
 app.add_middleware(
     CORSMiddleware,
