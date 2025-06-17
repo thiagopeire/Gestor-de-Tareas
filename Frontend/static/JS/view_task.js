@@ -13,7 +13,7 @@ async function fetchTask() {
       })
       if (!response.ok) {
         console.error("No se encontró la tarea con el ID proporcionado");
-        window.location.href = "tasks_main.html"; // Redirigir a la página principal si no se encuentra la tarea
+        window.location.href = "taskify"; // Redirigir a la página principal si no se encuentra la tarea
         return;
       }
       const task = await response.json()
@@ -29,8 +29,8 @@ async function fetchTask() {
       }
 
     } catch(error) {
-          
-          window.location.href = "tasks_main.html"; // Redirigir a la página principal si hay un error
+
+          window.location.href = "taskify"; // Redirigir a la página principal si hay un error
         }
 }
 const errorMsg = document.getElementById("error-msg");
