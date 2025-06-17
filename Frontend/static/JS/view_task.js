@@ -2,6 +2,7 @@ async function fetchTask() {
   try {
       const taskId = window.location.pathname;
       taskId = taskId.split("/").pop(); // Obtener el último segmento de la URL
+      console.log("ID de tarea:", taskId);
       if (!taskId) {
         console.error("No se encontró ID en la URL");
       }
@@ -13,7 +14,7 @@ async function fetchTask() {
       })
       if (!response.ok) {
         console.error("No se encontró la tarea con el ID proporcionado");
-        window.location.href = "taskify"; // Redirigir a la página principal si no se encuentra la tarea
+         // Redirigir a la página principal si no se encuentra la tarea
         return;
       }
       const task = await response.json()
