@@ -94,7 +94,7 @@ class Tarea: #Clase que maneja las funciones de las tareas
         except:
             return False
     def VerifyExpiredAt(dict_task:dict): #Verifica si hay algun valor, si lo hay lo actualiza a datetime y sino lo deja asi
-        if dict_task["expired_at"] != "No especificado" or dict_task["expired_at"] != None: #Si existe un valor en expired_at lo convierte a una fecha y hora y lo devuelve en el diccionario
+        if dict_task["expired_at"] != "No especificado" or dict_task["expired_at"] != False: #Si existe un valor en expired_at lo convierte a una fecha y hora y lo devuelve en el diccionario
             expiracion=Tarea.expiration(dict_task['expired_at'])
             dict_task["expired_at"]=expiracion
         return dict_task
