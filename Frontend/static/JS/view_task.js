@@ -1,6 +1,7 @@
 async function fetchTask() {
   try {
       const taskId = window.location.pathname;
+      taskId = taskId.split("/").pop(); // Obtener el último segmento de la URL
       if (!taskId) {
         console.error("No se encontró ID en la URL");
       }
