@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from routers import tareas, users
+from Backend.routers import tareas, users
 
 
 app = FastAPI()
