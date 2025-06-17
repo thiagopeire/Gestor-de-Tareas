@@ -47,8 +47,9 @@ document.getElementById('task-updated').addEventListener('submit', async functio
   const priority = document.getElementById('task-priority').value;
   const status = document.getElementById('task-status').value;
 
-  const params = new URLSearchParams(window.location.search);
-  const taskId = params.get("id");
+  const taskPath = window.location.pathname;
+  const taskId = taskPath.split("/").pop(); // Obtener el último segmento de la URL
+  console.log("ID de tarea:", taskId);
 
   const taskData = {
     id: taskId,
@@ -60,7 +61,7 @@ document.getElementById('task-updated').addEventListener('submit', async functio
   };
 
   try {
-    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks`, {
+    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/update`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -89,12 +90,10 @@ document.getElementById('task-updated').addEventListener('submit', async functio
 document.getElementById('delete-task').addEventListener("click", async function(event) {
   event.preventDefault();
 
-  const params = new URLSearchParams(window.location.search);
-  const taskId = params.get("id");
-  if (!taskId) {
-    console.error("No se encontró ID en la URL");
-    return;
-  }
+  const taskPath = window.location.pathname;
+  const taskId = taskPath.split("/").pop(); // Obtener el último segmento de la URL
+  console.log("ID de tarea:", taskId);
+
   try {
     const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/me/${taskId}`, {
       method: 'DELETE',

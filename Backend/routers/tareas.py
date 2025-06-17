@@ -33,7 +33,7 @@ async def task_create(task:Task, user:User = Depends(current_user)):
         raise TaskError.GenericError()
         
 
-@router.put("/", status_code=status.HTTP_202_ACCEPTED)
+@router.put("/update", status_code=status.HTTP_202_ACCEPTED)
 async def task_update(task_updated:Task, _:User = Depends(current_user)):
     
     id=task_updated.id
@@ -49,7 +49,7 @@ async def task_update(task_updated:Task, _:User = Depends(current_user)):
         raise TaskError.GenericError(status.HTTP_404_NOT_FOUND, detail=e)
         
     
-@router.delete("/me/{id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/delete/{id}", status_code=status.HTTP_204_NO_CONTENT)
 async def task_delete(id:str, _:User = Depends(current_user)):
     try: 
         db.main.tasks.find_one_and_delete({"_id":ObjectId(id)})
