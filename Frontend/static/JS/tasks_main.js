@@ -28,7 +28,7 @@ function renderTasks(tasks) {
 
     tr.innerHTML = `
       <td class="cursor-pointer hover:underline table-...-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">
-        <a href="view_task.html?id=${task.id}">${task.title || 'Sin título'}</a>
+        <a href="me?id=${task.id}">${task.title || 'Sin título'}</a>
       </td>
       <td class="table-...-240 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
         <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#21284a] text-white text-sm font-medium leading-normal w-full">

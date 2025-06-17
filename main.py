@@ -36,8 +36,5 @@ async def get():
     return FileResponse(os.path.join("Frontend","templates", "create_task.html"))
 @app.get("/me/{id}", status_code=200)
 async def get():
-    return FileResponse(os.path.join("Frontend","templates", "login.html"))
-@app.get("/login", status_code=200)
-async def get():
-    return FileResponse(os.path.join("Frontend","templates", "login.html"))
+    return FileResponse(os.path.join("Frontend","templates", "view_task.html"))
 
