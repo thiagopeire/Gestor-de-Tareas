@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
 from Backend.routers import tareas, users
 
 
@@ -22,4 +24,4 @@ app.include_router(users.router)
 
 @app.get("/", status_code=200)
 async def get():
-    return {"message":"sucess"}
+    return FileResponse(os.path.join("Frontend", "index.html"))
