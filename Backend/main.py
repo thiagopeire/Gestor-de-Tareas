@@ -1,7 +1,5 @@
-from fastapi import FastAPI, APIRouter, exceptions, status
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import json
-from jwcrypto import jwt
 from routers import tareas, users
 
 
