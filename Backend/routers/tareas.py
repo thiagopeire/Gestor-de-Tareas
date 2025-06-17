@@ -40,8 +40,6 @@ async def task_update(task_updated:Task, _:User = Depends(current_user)):
     dict_task:dict=Tarea.VerifyExpiredAt(dict(task_updated))
     del dict_task["id"]
     try:
-        if SearchTask.by_id(id)["expired_at"] != None:
-            dict_task["expired_at"]=SearchTask.by_id(id)["expired_at"]
         dict_task["created_at"]=SearchTask.by_id(id)["created_at"]
         dict_task["created_by"]=SearchTask.by_id(id)["created_by"]
         dict_task["modify_at"]=Time.now()
@@ -96,8 +94,8 @@ class Tarea: #Clase que maneja las funciones de las tareas
         except:
             return False
     def VerifyExpiredAt(dict_task:dict): #Verifica si hay algun valor, si lo hay lo actualiza a datetime y sino lo deja asi
-        if dict_task["expired_at"] != None: #Si existe un valor en expired_at lo convierte a una fecha y hora y lo devuelve en el diccionario
-            expiracion=Tarea.expiration(dict_task['expired_at']) if Tarea.expiration(dict_task['expired_at']) is not True else None
+        if dict_task["expired_at"] != "No especificado" or dict_task["expired_at"] != None: #Si existe un valor en expired_at lo convierte a una fecha y hora y lo devuelve en el diccionario
+            expiracion=Tarea.expiration(dict_task['expired_at'])
             dict_task["expired_at"]=expiracion
         return dict_task
 class TaskError(HTTPException): #Defino una clase propia para los errores genericos
