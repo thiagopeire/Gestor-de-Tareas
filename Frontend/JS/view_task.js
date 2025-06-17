@@ -5,7 +5,7 @@ async function fetchTask() {
       if (!taskId) {
         console.error("No se encontró ID en la URL");
       }
-      const response = await fetch(`http://localhost:8000/tasks/me/view/${taskId}`, {
+      const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/me/view/${taskId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -58,7 +58,7 @@ document.getElementById('task-updated').addEventListener('submit', async functio
   };
 
   try {
-    const response = await fetch(`http://localhost:8000/tasks`, {
+    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ document.getElementById('delete-task').addEventListener("click", async function(
     return;
   }
   try {
-    const response = await fetch(`http://localhost:8000/tasks/me/${taskId}`, {
+    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/me/${taskId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`

@@ -31,7 +31,7 @@ const token = localStorage.getItem('access_token');
 
       async function fetchTasks() {
         try {
-          const response = await fetch('http://localhost:8000/tasks/me', {
+          const response = await fetch('https://gestor-de-tareas-r39h.onrender.com/tasks/me', {
             headers: {
               'Authorization': `Bearer ${token}`
             },

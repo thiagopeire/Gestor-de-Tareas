@@ -1,4 +1,3 @@
-console.log("aaaa");
         document.getElementById('create_task').addEventListener('submit', async function(event) {
           event.preventDefault();
 
@@ -16,7 +15,7 @@ console.log("aaaa");
           };
           console.log('Task Data:', taskData);
           try {
-              const response = await fetch('http://localhost:8000/tasks', {
+              const response = await fetch('https://gestor-de-tareas-r39h.onrender.com/tasks', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
