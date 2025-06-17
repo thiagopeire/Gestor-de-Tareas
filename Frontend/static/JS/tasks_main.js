@@ -46,7 +46,7 @@ function renderTasks(tasks) {
         </button>
       </td>
       <td class="table-...-480 h-[72px] px-4 py-2 w-[400px] text-[#8e99cc] text-sm font-normal leading-normal">
-        ${task.due_date || 'Sin fecha'}
+        ${task.expired_at || 'Sin fecha'}
       </td>
       <td class="table-...-600 h-[72px] px-4 py-2 w-[400px] text-[#8e99cc] text-sm font-normal leading-normal">
         ${task.assignee || 'Anónimo'}

@@ -98,13 +98,13 @@ document.getElementById('delete-task').addEventListener("click", async function(
     const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/delete/${taskId}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}` 
       }
     });
-
+  
     if (!response.ok) {
-      throw new Error('Hubo un error al eliminar la tarea');
-    }
+      throw new Error('Hubo un error al eliminar la tarea');B 
+    } 
 
     document.getElementById('success-msg').textContent = "Tarea eliminada correctamente";
     document.getElementById('success-msg').classList.remove("hidden");

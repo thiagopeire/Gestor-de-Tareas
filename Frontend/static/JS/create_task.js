@@ -11,7 +11,7 @@
             subtitle: subtitle,
             description: description,
             priority: priority,
-            expired_at: dueDate !== '' ? dueDate : "En proceso"
+            expired_at: dueDate
           };
           console.log('Task Data:', taskData);
           try {
