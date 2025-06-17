@@ -1,3 +1,11 @@
+const token = localStorage.getItem('access_token');
+if (!token || isTokenExpired(token)) {
+  console.log("Token inválido o expirado");
+  window.location.href = "login";
+} else {
+  
+  fetchTasks();
+}
 function parseJwt(tok_en) {
   if (!tok_en) return null;
   try {
@@ -17,14 +25,6 @@ function isTokenExpired(identifier) {
   if (!payload || !payload.exp) return true;
   const now = Math.floor(Date.now() / 1000);
   return payload.exp < now;
-}
-const token = localStorage.getItem('access_token');
-if (!token || isTokenExpired(token)) {
-  console.log("Token inválido o expirado");
-  window.location.href = "login";
-} else {
-  
-  fetchTasks();
 }
 
 async function fetchTasks() {
