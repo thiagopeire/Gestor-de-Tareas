@@ -17,6 +17,7 @@ async function fetchTasks() {
     console.error('Error al buscar las tareas:', error);
   }
 }
+fetchTasks(); 
 
 function renderTasks(tasks) {
   const tbody = document.querySelector("tbody");
