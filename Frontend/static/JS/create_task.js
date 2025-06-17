@@ -15,7 +15,7 @@
           };
           console.log('Task Data:', taskData);
           try {
-              const response = await fetch('https://gestor-de-tareas-r39h.onrender.com/tasks', {
+              const response = await fetch('https://gestor-de-tareas-r39h.onrender.com/tasks/create', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

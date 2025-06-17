@@ -18,12 +18,12 @@ async def task_get_one(user = Depends(current_user)):
 @router.get("/me/view/{id}")
 async def task_get_one(id, _ = Depends(current_user)):
     return SearchTask.by_id(id)
-@router.post("/", status_code=201,) 
+
+@router.post("/create", status_code=201,) 
 async def task_create(task:Task, user:User = Depends(current_user)):
     task_dict=dict(task)
     task_dict["created_by"]=user.id
     del task_dict["id"]
-    
     try: 
         expiracion=Tarea.expiration(task_dict['expired_at'])
         task_dict.update({"created_at":str(Time.now()), "expired_at":expiracion, "priority":0 if task_dict["priority"] == None else task_dict["priority"]})
