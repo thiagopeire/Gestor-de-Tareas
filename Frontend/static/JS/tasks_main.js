@@ -49,7 +49,7 @@ function renderTasks(tasks) {
         ${task.expired_at || 'Sin fecha'}
       </td>
       <td class="table-...-600 h-[72px] px-4 py-2 w-[400px] text-[#8e99cc] text-sm font-normal leading-normal">
-        ${task.assignee || 'Anónimo'}
+        ${task.created_at || 'Sin fecha de creación'}
       </td>
     `;
 
