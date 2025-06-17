@@ -5,7 +5,6 @@ from fastapi.responses import FileResponse
 import os
 from Backend.routers import tareas, users
 
-
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="Frontend/static"), name="static")
 # CORS setup
@@ -22,3 +21,7 @@ app.include_router(users.router)
 @app.get("/", status_code=200)
 async def get():
     return FileResponse(os.path.join("Frontend","templates", "index.html"))
+
+@app.get("/login", status_code=200)
+async def get():
+    return FileResponse(os.path.join("Frontend","templates", "login.html"))
