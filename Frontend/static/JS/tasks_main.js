@@ -1,32 +1,3 @@
-const token = localStorage.getItem('access_token');
-if (!token || isTokenExpired(token)) {
-  console.log("Token inválido o expirado");
-  window.location.href = "login";
-} else {
-  
-  fetchTasks();
-}
-function parseJwt(tok_en) {
-  if (!tok_en) return null;
-  try {
-    const base64Url = tok_en.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
-      '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-    ).join(''));
-    return JSON.parse(jsonPayload);
-  } catch (e) {
-    return null;
-  }
-}
-
-function isTokenExpired(identifier) {
-  const payload = parseJwt(identifier);
-  if (!payload || !payload.exp) return true;
-  const now = Math.floor(Date.now() / 1000);
-  return payload.exp < now;
-}
-
 async function fetchTasks() {
   try {
     const response = await fetch('https://gestor-de-tareas-r39h.onrender.com/tasks/me', {
