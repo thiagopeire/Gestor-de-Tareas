@@ -40,6 +40,8 @@ async def task_update(task_updated:Task, _:User = Depends(current_user)):
     dict_task:dict=Tarea.VerifyExpiredAt(dict(task_updated))
     del dict_task["id"]
     try:
+        if SearchTask.by_id(id)["expired_at"] != None:
+            dict_task["expired_at"]=SearchTask.by_id(id)["expired_at"]
         dict_task["created_at"]=SearchTask.by_id(id)["created_at"]
         dict_task["created_by"]=SearchTask.by_id(id)["created_by"]
         dict_task["modify_at"]=Time.now()
