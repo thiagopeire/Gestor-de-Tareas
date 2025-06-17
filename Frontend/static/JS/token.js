@@ -22,5 +22,5 @@ function isTokenExpired(token) {
 if (!token || isTokenExpired(token)) {
   console.log("Token inválido o expirado");
   // podés redirigir al login
-  window.location.href = "login.html";
+  window.location.href = "login";
 }

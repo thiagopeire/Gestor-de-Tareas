@@ -28,7 +28,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
           localStorage.setItem("access_token", data.access_token);
           const token = localStorage.getItem("access_token");
           console.log("Token de acceso:", token);
-          window.location.href = "tasks_main.html"; // Redirigir a la página principal
+          window.location.href = "taskify"; // Redirigir a la página principal
         } catch (error) {
             errorMsg.textContent = error.detail || "Error al iniciar sesión: " + error.message;
             errorMsg.classList.remove("hidden");

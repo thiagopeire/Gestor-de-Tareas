@@ -17,7 +17,7 @@ document.getElementById("registro-form").addEventListener("submit", async functi
         const response = await fetch("https://gestor-de-tareas-r39h.onrender.com/users/register", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json" 
             },
             body: JSON.stringify(data)
             });
