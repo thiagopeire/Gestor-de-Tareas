@@ -95,7 +95,7 @@ document.getElementById('delete-task').addEventListener("click", async function(
   console.log("ID de tarea:", taskId);
 
   try {
-    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/tasks/me/${taskId}`, {
+    const response = await fetch(`https://gestor-de-tareas-r39h.onrender.com/delete/${taskId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`
