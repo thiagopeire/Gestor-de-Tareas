@@ -2,7 +2,7 @@ from Backend.models.users import User
 from fastapi import APIRouter, Depends, HTTPException,status
 from fastapi.security import OAuth2PasswordRequestForm
 from Backend.db.client import db 
-from Backend.auth.auth_users import Autorizar,SearchUser,hash_password,verify_password,encode
+from Backend.auth.auth_users import Auth, SearchUser,hash_password,verify_password,encode
 from Backend.schemas.users import user_schema, users_schema
 from datetime import datetime, timedelta
 from urllib.parse import unquote
@@ -14,7 +14,7 @@ TIMETOEXPIRE=36 #hours
 async def users_get_all():
     return users_schema(db.main.users.find())
 
-@router.post("/register", status_code=status.HTTP_201_CREATED) #/register path
+@router.post("/register", status_code=status.HTTP_201_CREATED) #register path
 async def register_user(user:User):
     user_dict=dict(user)
     del user_dict["id"]
@@ -22,10 +22,10 @@ async def register_user(user:User):
     hashed_password = hash_password(password)
     user_dict["password"]=hashed_password
     
-    Autorizar.birthdate(user.birthdate)
-    Autorizar.username(user.username)    
-    Autorizar.email(user.email)
-    Autorizar.password(user.password)    
+    Auth.birthdate(user.birthdate)
+    Auth.username(user.username)    
+    Auth.email(user.email)
+    Auth.password(user.password)    
                
     try:        
         db.main.users.insert_one(user_dict)

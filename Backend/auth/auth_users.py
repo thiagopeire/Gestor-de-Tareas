@@ -71,7 +71,7 @@ class SearchUser:
         except:
             return None
         
-class Autorizar:
+class Auth:
     def email(email:str):
         match_email=re.search(r"[\w.%_áéíúóñ+-]+@[a-zA-Z]+\.[a-zA-Z]{0,2}\.?[a-zA-Z]{0,2}", email)
         if match_email == None:
